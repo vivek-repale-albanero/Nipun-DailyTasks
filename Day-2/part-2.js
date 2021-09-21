@@ -31,6 +31,7 @@ class Article {
       return articleA.date - articleB.date;
     }
   }
+
   
   // usage
   let articles = [
@@ -120,3 +121,26 @@ class CoffeeMachine {
   
   machine.waterAmount = 100; 
  // console.log(machine.#waterAmount); //It can't access
+
+
+//mixins - classes which combine two class attributes
+let sayHi = {
+  sayHi() {
+    console.log(`Hello ${this.name}`);
+  },
+  sayBye() {
+    consoloe.log(`Bye ${this.name}`);
+  }
+};
+
+class User {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+// copy the methods
+Object.assign(User.prototype, sayHi);
+
+// now User can say hi
+new User("Nipun").sayHi();
