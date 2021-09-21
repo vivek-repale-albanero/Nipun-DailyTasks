@@ -41,7 +41,7 @@ arr3 = ["I", "study", "JavaScript","right","now"];
 arr3.splice(0,3,"i","LIKE","DANCING") //remove elements and insert at the same time at beginning
 console.log(arr3)
 arr3 = ["I", "study", "JavaScript","right","now"]; 
-arr3.splice(2, 0, "complex", "language");
+arr3.splice(2, 0, "complex", "language"); 
 console.log(arr3);
 
 const items = [
@@ -50,25 +50,29 @@ const items = [
     {name:"Album",price:60},
     {name:"computer",price:800}
 ]
+//iterate over the object 
+
+items.forEach((item)=>{
+    console.log(item)
+})
 //Get all items <100
 const filteredItems= items.filter((item)=>{
 return item.price<=100
 })
 console.log(filteredItems)
 //Get all values
+
+
 const itemNames = items.map((item)=>{
     return console.log(item.name+": "+item.price)
 })
+
+
 // find if there is an element
 const findItem = items.find((item)=>{
     return item.name === "TV";
 })
 console.log(findItem)
-//iterate over the object 
-
-items.forEach((item)=>{
-    console.log(item)
-})
 
 //return if any of the item is under 100 . returns true or false
 const inExpensiveItems=items.some((item)=>{
