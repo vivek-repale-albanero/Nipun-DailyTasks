@@ -26,7 +26,26 @@ return true
 };
 
 console.log(isPalindrome(128));
-
+//kadane's Algorithm-Max subarray
+/*Arr[] = {1,2,3,-2,5}
+Output:
+9
+*/ 
+const kadanes=(arr)=>{
+    let msf=-10000,meh=0;
+    for(let i=0;i<arr.length;i++){
+        meh+=arr[i];
+        if(meh<arr[i]){
+            meh=arr[i];
+        }
+        if(msf<meh){
+            msf=meh;
+        }
+    }
+    return msf;
+}
+nums=[1,2,3,-2,5]
+console.log(kadanes(nums))
 /*27. Remove Element 
 Difficulty:Easy 
 Input: nums = [3,2,2,3], val = 3
@@ -164,7 +183,7 @@ function areAnagram(s1,s2)
      
     console.log(areAnagram(s1, s2));
 
-    /*  */
+    /* Next greatest element */
 function NGE(arr, n)
 {
     var stack = [];
@@ -195,4 +214,4 @@ function NGE(arr, n)
 var arr = [11, 13, 21, 3];
 var n = arr.length;
 NGE(arr, n);
-         
+       

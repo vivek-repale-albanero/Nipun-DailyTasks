@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form name="myForm">
+      <input name="one" value="1" />
+      <input name="two" value="2" />
+    </form>
+    <select id="select">
+      <option value="apple">Apple</option>
+      <option value="pear">Pear</option>
+      <option value="banana">Banana</option>
+    </select>
+
+    <select id="genres">
+      <option value="rock">Rock</option>
+      <option value="blues" selected>Blues</option>
+    </select>
+    <script>
+      let form = document.forms.myForm;
+
+      // get the element
+      let elem = form.elements.one;
+
+      console.log(elem.value); // 1
+      select.options[1].selected = true;
+      select.selectedIndex = 1;
+      select.value = "pear";
+
+      // task
+      let selectedOption = genres.options[genres.selectedIndex];
+      alert(selectedOption.value);
+      let newOption = new Option("Classic", "classic");
+      genres.append(newOption);
+      newOption.selected = true;
+    </script>
+  </body>
+</html>

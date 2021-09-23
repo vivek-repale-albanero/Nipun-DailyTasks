@@ -66,7 +66,11 @@ createPosts({title:"#3 Post",body:"Hi this is #3 Body Post"})
 .then(getPosts)
 .catch((err)=>{console.log(err)});
 */
-
+async function fetchPosts(){
+   await createPosts();
+   getPosts();
+}
+fetchPosts()
 
 
 
