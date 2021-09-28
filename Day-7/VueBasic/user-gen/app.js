@@ -1,48 +1,38 @@
+/* const app = Vue.createApp({
+    data(){
+        return{
+            firstName : 'Nipun' ,
+            lastName : 'Bathini' ,
+            email : 'bathininipun79@gmail.com',
+            gender : 'female' ,
+            picture : 'https://randomuser.me/api/portraits/men/58.jpg'
+        }
+    },
+     methods:{
+       async getUser(){
+            const res = await fetch('https://randomuser.me/api/')
+            const {results} = await res.json()
 
-/*
-fetch("./api.json").then((response)=>{
-    return response.json();
-}).then((data)=>{
-    let html = '';
-    for(let i=0;i<data.length;i++){
-
-       html=`
-      
-       ${data.map((item,index) => {
-           return` 
-           <div class="container">
-           <div class="row">
-           <div class="col">
-           <div class="product-container">
-           <img class="product_image" src="${item.product_image}" />
-           <div class="info">
-             <h2 class="name">${item.name}</h2>
-             <p class="desc">${item.desc}</p>
-             <div class="price">${item.price}</div>
-             <button type="button" id="btn">Add to cart</button>
-           </div>
-           </div>
-           </div>
-           </div>
-           </div>`}).join('')}
-    <br> <br><br>` ;}
-    hello.innerHTML= html
-}).catch((error)=>{
-    return console.log(error)
+            this.firstName = results[0].name.first ,
+            this.lastName = results[0].name.last  ,
+            this.email = results[0].email ,
+            this.gender = results[0].gender  ,
+            this.picture = results[0].picture.large
+        }
+    }
 })
 */
 let arr =[
     {
         "id":1,
         "product_image":"https://www.seekpng.com/png/full/415-4158786_park-vi-game-jersey-black-color-t-shirt.png",
-
         "name":"Mens Short Sleeve Crew Neck-",
         "desc":"White",
          "price":450
     },
     {
         "id":2,
-        "product_image":"2-t-shirt-png-image.png",
+        "product_image":"",
         "name":"Womens Short Sleeve Crew Neck-",
         "desc":"Black",
          "price":500
@@ -111,6 +101,7 @@ let arr =[
          "price":450
     }
 ]
+
 const app = Vue.createApp({
     data(){
         return{
@@ -120,22 +111,3 @@ const app = Vue.createApp({
 })
 
 app.mount("#app")
-
-
-
-
-
-function select(evt, cityName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-  }
-  document.getElementById("default").click();

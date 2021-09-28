@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <!-- 
+    <div>
+        <img  v-bind:src="picture" 
+        :class="gender"
+        alt="">
+        <h1>Hello {{firstName}}  {{lastName}} </h1>
+        <h3>Email : {{email}}</h3>
+        <button v-on:click="getUser()" :class="gender">Get Random User</button>
+    </div> -->
+    <div id="app">
+       <div class="container">
+       <div  v-for="product in arr">
+        <img class="product_image" src="${product.product_image}" />
+        <div class="info">
+          <h2 class="name">{{product.name}}</h2>
+          <p class="desc">{{product.desc}}</p>
+          <div class="price">{{product.price}}</div>
+          <button type="button" id="btn">Add to cart</button>
+        </div>
+        </div>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>    
+</body>
+</html>

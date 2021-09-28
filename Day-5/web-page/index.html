@@ -7,7 +7,7 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css" />
-    <script src="index.js"></script>
+    
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
@@ -17,7 +17,7 @@
     />
   </head>
   <body>
-    
+    <div id="app">
     <navbar>
       <ul class="nav-list">
         <li class="nav-item">Organico.</li>
@@ -39,121 +39,24 @@
 
 
    <div class="heading" style="margin-top: 8rem;"><p>Top Products</p></div>
+  
+<br>
+  
+         
+  <div class="container">
+  <div  v-for="product in arr">
+   <img class="product_image"  :src="product_image" />
+   <div class="info">
+     <h2 class="name">{{product.name}}</h2>
+     <p class="desc">{{product.desc}}</p>
+     <div class="price">{{product.price}}</div>
+     <button type="button" id="btn">Add to cart</button>
+   </div>
+   </div>
+   </div>
+         
+  
    
-    <ul>
-      <li data-tab-target=".t-shirt" class="active tab">T-Shirts</li>
-      <li data-tab-target=".trouser" class="tab">Trousers</li>
-      <li data-tab-target=".jackets" class="tab">Jackets</li>
-    </ul>
-
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <div class="product-container t-shirt active"  data-tab-content >
-            <img class="product_image" src="images/blank-t-shirt-png-30278.jpg" />
-            <div class="info">
-              <h2 class="name">OrangeT-shirt</h2>
-              <p class="desc">Men</p>
-              <div class="price">Rs.500</div>
-              <button type="button" id="btn">Add to cart</button>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="product-container t-shirt active" class="t-shirt" data-tab-content>
-            <img class="product_image" src="images/36652-7-grey-t-shirt.png" />
-            <div class="info">
-              <h2 class="name">Grey T-shirt</h2>
-              <p class="desc">Men</p>
-              <div class="price">Rs.500</div>
-              <button type="button" id="btn">Add to cart</button>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="product-container t-shirt active" class="t-shirt" data-tab-content class="active">
-            <img class="product_image" src="images/5-t-shirt-png-image.png" />
-            <div class="info">
-              <h2 class="name">Dark Blue T-shirt</h2>
-              <p class="desc">Men</p>
-              <div class="price">Rs.500</div>
-              <button type="button" id="btn">Add to cart</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="product-container trouser" data-tab-content >
-            <img class="product_image" src="images/PngItem_5142666.png" />
-            <div class="info">
-              <h2 class="name">Blue T-shirt</h2>
-              <p class="desc">Men</p>
-              <div class="price">Rs.500</div>
-              <button type="button" id="btn">Add to cart</button>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="product-container" data-tab-content>
-            <img class="product_image" src="images/PngItem_5113048.png" />
-            <div class="info">
-              <h2 class="name">Black Polo T-shirt</h2>
-              <p class="desc">Men</p>
-              <div class="price">Rs.500</div>
-              <button type="button" id="btn">Add to cart</button>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="product-container" data-tab-content>
-            <img class="product_image" src="images/PngItem_28550.png" />
-            <div class="info">
-              <h2 class="name">Yellow T-shirt</h2>
-              <p class="desc">Men</p>
-              <div class="price">Rs.500</div>
-              <button type="button" id="btn">Add to cart</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="product-container">
-            <img class="product_image" src="images/chandler.jpg" />
-            <div class="info">
-              <h2 class="name">Blue T-shirt</h2>
-              <p class="desc">Men</p>
-              <div class="price">Rs.500</div>
-              <button type="button" id="btn">Add to cart</button>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="product-container">
-            <img class="product_image" src="images/trouser-345o.jpg" />
-            <div class="info">
-              <h2 class="name">Trouser</h2>
-              <p class="desc">Men</p>
-              <div class="price">Rs.500</div>
-              <button type="button" id="btn">Add to cart</button>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="product-container">
-            <img class="product_image" src="images/trouser-3454.jpg" />
-            <div class="info">
-              <h2 class="name">Trouser</h2>
-              <p class="desc">Men</p>
-              <div class="price">Rs.500</div>
-              <button type="button" id="btn">Add to cart</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="container-2">
    <div class="row">
        <div class="column"> <img src="images/4920323.jpg" alt="" height="500px" style="border-radius: 2rem;"> </div>
@@ -164,6 +67,10 @@
   </div>
 </div>
 <br><br><br>
+
+<div id="hello">
+
+</div>
 
 <br><br><br>
    <div class="footer">
@@ -177,6 +84,9 @@
     </div>
     <p><i class="far fa-copyright"></i>  Organico Company</p>
    </div>
+  </div>
 
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="index.js" defer></script>    
   </body>
 </html>
