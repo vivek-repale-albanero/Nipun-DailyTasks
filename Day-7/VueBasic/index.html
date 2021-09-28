@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .figure div{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+        .figure div.red{
+                background-color: red;
+        }
+        .figure div.blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>{{ product }}</h2>
+        <p>{{ description }}</p>
+        <ol>
+            <li v-for ="todo in todos ">
+                {{ todo.text }}
+            </li>
+         <input v-model="description">
+         <button v-on:click="reverseMessage">Reverse Message</button>
+         <!--interpolation : helps js code to write in html-->
+             {{description.length}} 
+
+        <!-- Directives-->
+        <p v-if="seen">Now you see me</p>
+        <!--Block of elements-->
+        <template v-if="seen">
+            <p>1</p>
+            <p>2</p>
+        </template>
+        <template v-else>
+            <p>4</p> 
+            <p>5</p>
+        </template>
+        <h3 v-bind:class="red">This is v-bind method</h3>
+{{count}}
+<!--bindng click event-->
+<button v-on:click="count++">Increament counter</button>
+<!--class and style binding-->
+    <h1 class="vueStyle">Hello</h1>
+    <div class="figure" >
+        <div :class="classObject"></div>
+    </div>
+
+    <input type="button" @click="toggleColor" value="Toggle">
+    <app-user/>
+    <app-user/>
+    <app-user/>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="main.js"></script>
+</body>
+</html>

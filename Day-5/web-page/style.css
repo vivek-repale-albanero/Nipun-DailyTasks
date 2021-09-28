@@ -92,8 +92,12 @@
     font-size: 2rem;
 }
 .container{
+    display: grid;
     margin:10rem;
     margin-bottom: 1rem;
+    grid-template-columns: repeat(3, minmax(300px, 500px));
+    grid-gap: 50px;
+    justify-content: space-around;  
 }
 .container .col {
     display: flex;
@@ -103,7 +107,8 @@
     display: flex;
     padding: 2rem;
 }
-.container .product-container{
+ .product-container{
+    margin: 10rem;
     width: 18.5rem;
     background: white;
     transform: translate(-50%,-50%);
@@ -187,101 +192,52 @@
 
 
 
-
-
-[data-tab-content] {
-    display: none;
-  }
-  
-  .active[data-tab-content] {
-    display: block;
-  }
-  
-  body {
-    padding: 0;
-    margin: 0;
-  }
-  
-  .tabs {
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    box-shadow:2px white;
     display: flex;
-    justify-content: space-around;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    border-bottom: 1px solid black;
-  }
-  
-  .tab {
-    cursor: pointer;
-    padding: 10px;
-  }
-  
-  .tab.active {
-    background-color: rgb(97, 97, 97);
-  }
-  
-  .tab:hover {
-    background-color: #AAA;
-  }
-  
-  .tab-content {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  /* Background Styles Only */
-  
-  @import url('https://fonts.googleapis.com/css?family=Raleway');
-  
-  * {
-      font-family: Raleway;
-  }
-  
-  .side-links {
-    position: absolute;
-    top: 55px;
-    right: 15px;
-  }
-  
-  .side-link {
-    display: flex;
-    align-items: center;
     justify-content: center;
-    text-decoration: none;
-    margin-bottom: 10px;
-    color: white;
-    width: 180px;
-    padding: 10px 0;
-    border-radius: 10px;
+    align-items: center;
   }
   
-  .side-link-youtube {
-    background-color: red;
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
   }
   
-  .side-link-twitter {
-    background-color: #1DA1F2;
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
   }
   
-  .side-link-github {
-    background-color: #6e5494;
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
   }
   
-  .side-link-text {
-    margin-left: 10px;
-    font-size: 18px;
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
   }
+    
   
-  .side-link-icon {
-    color: white;
-    font-size: 30px;
-  }
+  
+  
+  
+  
+ 
+
+
+
+
