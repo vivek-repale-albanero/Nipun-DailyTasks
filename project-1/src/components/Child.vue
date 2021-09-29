@@ -4,18 +4,19 @@
    
     <div class="container">
   <div class="form-group row">
-    <label for="colFormLabel" class="col-sm-2 col-form-label ">Name:</label>
+    <label for="colFormLabel" class="col-sm-2 col-form-label " >Name:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control form-control-sm mx-1" id="colFormLabel" v-model="Name" >
+      <input type="text" class="form-control form-control-sm mx-1" id="colFormLabel" v-model="Name" @keyup="editBlockName(Name,arr.id)">
     </div>
   </div> 
   <div class="form-group row">
     <label for="colFormLabel" class="col-sm-2 col-form-label">City:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control form-control-sm mx-1" id="colFormLabel" v-model="City" >
+      <input type="text" class="form-control form-control-sm mx-1" id="colFormLabel" v-model="City" @keyup="editBlockCity(City,arr.id)">
     </div>
   </div> 
-  <button @click="push">push</button>
+
+
 
 </div>
 
@@ -28,20 +29,16 @@ export default {
 components:{
 subChild
 },
-props:["array"],
+props:{arr:Object,editBlockCity:Function,editBlockName:Function},
 data(){
     return{
-        Name:"",
-        City:"",
-        show:false
+        Name:this.arr.Name,
+        City:this.arr.City,
     }
 },
-methods:{
-  push(){
-  this.array.push({Name:this.Name,City:this.City})
-  console.log(array)
-  }
-},
+
+  
+
 mounted(){
     
 }
