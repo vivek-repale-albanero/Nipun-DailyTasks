@@ -4,7 +4,7 @@
    
     <div class="container">
   <div class="form-group row">
-    <label for="colFormLabel" class="col-sm-2 col-form-label " >Name:</label>
+    <label for="colFormLabel" class="col-sm-2 col-form-label">Name:</label>
     <div class="col-sm-10">
       <input type="text" class="form-control form-control-sm mx-1" id="colFormLabel" v-model="Name" @keyup="editBlockName(Name,arr.id)">
     </div>
@@ -24,10 +24,8 @@
 </template>
 
 <script>
-import subChild from "./subChild.vue"
 export default {
 components:{
-subChild
 },
 props:{arr:Object,editBlockCity:Function,editBlockName:Function},
 data(){
@@ -55,5 +53,9 @@ mounted(){
 }
 .card-text{
     float: left;
+}
+input{
+  height:30px;
+  width:250px
 }
 </style>
