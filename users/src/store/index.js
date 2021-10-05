@@ -52,7 +52,7 @@ export default createStore({
   },
   getters: {
     getUsers(state) {
-      return localStorage.getItem("Users") 
+      return [...state.users]
     }
   },
   actions: {

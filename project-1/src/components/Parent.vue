@@ -6,12 +6,11 @@
 <br>
 <br>
     <div v-for="(arr, index) in array" :key="index">
-    <button class="btn-2" @click="deleteBlock(index)">X</button>
+    <button class="btn-2" @click="deleteBlock(arr.id)">X</button>
       <Child
         :arr="arr"
         :editBlockName="editBlockName"
         :editBlockCity="editBlockCity"
-        
       />
     </div>
 
@@ -37,55 +36,45 @@
       </div>
     </div>
     <br><br><br> <br>
+    
   </div>
 </template>
 <script>
-import Child from "./Child.vue";
-import subChild from "./subChild.vue";
+import Child from "./Child.vue" 
+import {mapState} from "vuex"
 export default {
-  components: { Child, subChild },
+  components: { Child },
   data() {
     return {
-      array: [{ Name: "", City: "", id: Math.ceil(Math.random() * 1000) }],
       show: true,
     };
   },
+  computed:{
+      ...mapState({
+          array:'array'
+      })
+  },
   methods: {
     addBlock() {
-      this.array.push({
-        Name: "",
-        City: "",
-        id: Math.ceil(Math.random() * 1000),
-      });
+        this.$store.dispatch('addBlock');
     },
-    editBlockName(Name_new, index) {
-      if (Name_new !== undefined) {
-        this.array = this.array.map((item) => {
-          if (item.id === index) {
-            item.Name = Name_new;
-          }
-          return item;
-        });
-      }
+    editBlockName(Name, id) {
+        let arr=[Name,id]
+        console.log('From parent'+arr)
+        this.$store.dispatch('editBlockNewName',arr)
     },
     editBlockCity(City_new, index) {
-      if (City_new !== undefined) {
-        this.array = this.array.map((item) => {
-          if (item.id === index) {
-            item.City = City_new;
-          }
-          return item;
-        });
-      }
+        let arr=[City_new,index]
+        this.$store.dispatch('editBlockCity',arr)
     },
     deleteBlock(index) {
-      this.array.splice(index, 1);
+      this.$store.dispatch('deleteBlock',index);
     },
     toggle() {
       this.show = !this.show;
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style scoped>
