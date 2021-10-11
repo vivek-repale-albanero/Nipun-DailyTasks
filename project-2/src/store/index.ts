@@ -14,11 +14,11 @@ export default new Vuex.Store({
       state.users.push(arr)
       
     },
-    DELETE_USER(state, index) {
-      state.users = state.users.filter((item) => {
-        return item.id !== index;
-      });
-    },
+    // DELETE_USER(state, index) {
+    //   state.users = state.users.filter((item) => {
+    //     return item.id !== index;
+    //   });
+    // },
     UPDATE_USER(state, arr: UserModel) {
       state.users = state.users.map((item) => {
         if (item.id === arr.id) {

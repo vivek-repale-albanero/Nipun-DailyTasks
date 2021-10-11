@@ -1,17 +1,22 @@
 export default class UserModel {
-    Name: string;
-    Age : number;
-    Location:string;
-    Checkbox1:Boolean;
-    Checkbox2:Boolean;
-    id:number
+    // Name: string;
+    // Age : number;
+    // Location:string;
+    // Checkbox1:Boolean;
+    // Checkbox2:Boolean;
+    // id:number
+       From: string;
+       To: string;
+       Subject: string;
+       Introduction:string;
+       Conclusion:string;
+
   
     constructor() {
-      this.Name = '';
-      this.Age=0;
-      this.Location='';
-      this.Checkbox1=false;
-      this.Checkbox2=false;
-      this.id=0
+      this.From = '';
+      this.To='';
+      this.Subject='';
+      this.Introduction='';
+      this.Conclusion=''
     }
   }
