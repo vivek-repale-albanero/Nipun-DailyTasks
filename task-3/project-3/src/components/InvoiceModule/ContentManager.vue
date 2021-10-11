@@ -262,39 +262,19 @@
           <div class="accordion-body">
               <button class="btn btn-success" @click="addItem">Add Item</button>
               <br>
-            <label for="validationDefault01" class="form-label form-control-sm"
-              >Name</label
-            >
-            <input
-              type="text"
-              class="formstyle form-control form-control-sm"
-              id="validationDefault01"
-              v-model="itemName"
-              required
-              @keyup="eventItems"
-            />
-            <label for="validationDefault01" class="form-label form-control-sm"
-              >Gst</label
-            >
-            <input
-              type="text"
-              class="formstyle form-control form-control-sm"
-              id="validationDefault01"
-              v-model="itemGst"
-              required
-              @keyup="eventItems"
-            />
-            <label for="validationDefault01" class="form-label form-control-sm"
-              >Price</label
-            >
-            <input
-              type="text"
-              class="formstyle form-control form-control-sm"
-              id="validationDefault01"
-              v-model="itemPrice"
-              required
-              @keyup="eventItems"
-            />
+               <div v-for="(item, i) in data.items" :key="i">
+              <button
+                class="btn btn-sm float-end"
+                style="color: red"
+                @click="itemId(item.id)"
+              >
+                X
+              </button>
+              <TableItem :item="item" />
+              <br />
+            </div>
+      
+            
            
           </div>
         </div>
@@ -310,7 +290,12 @@
 <script>
 import { vxm } from "../../store/store.vuex";
 import { Options, Vue } from "vue-class-component";
-@Options()
+import TableItem from "./TableItem.vue"
+@Options({
+  components:{
+    TableItem
+  }
+})
 export default class Invoice extends Vue {
   data = vxm.invoicestore
   Fromdataname = "";
@@ -365,15 +350,32 @@ export default class Invoice extends Vue {
   addItem(){
    this.data.addNewItem()
   }
-    
+    itemId(id){
+      console.log(id)
+      this.data.itemDelId(id)
+    }
 
 
 }
 </script>
 
-<style>
+<style scoped>
 .formstyle {
   margin-top: -14px;
   margin-bottom: 4px;
+}
+.container{
+  overflow: hidden;
+  overflow-y: scroll;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 </style>

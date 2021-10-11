@@ -213,5 +213,13 @@ export default class App extends Vue {
 .container-main {
   overflow: hidden;
   max-height: 100%;
+  
+  padding-left: 5px;
+  padding-right: 5px;
 }
+.container{
+  padding: 5px;
+
+}
+
 </style>

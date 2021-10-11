@@ -2,10 +2,10 @@
   <div id="app-letter">
     <center><h5>Letter Template</h5></center>
     <div class="row">
-      <div class="col col-4">
+      <div class="col col-3">
         <ContentManager />
       </div>
-      <div class="col col-8">
+      <div class="col col-9">
         <StyleManager />
       </div>
     </div>
@@ -27,6 +27,7 @@ export default {
 #app-letter{
   height: 100vh;
   overflow: hidden;
+  padding:10px
 }
 .col{
   max-height: 100vh ;

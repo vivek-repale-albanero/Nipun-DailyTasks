@@ -1,11 +1,11 @@
 <template>
-  <div id="app-letter">
+  <div id="app-invoice">
     <center><h5>Invoice Template</h5></center>
     <div class="row">
-      <div class="col col-4">
+      <div class="col col-3">
         <ContentManager />
       </div>
-      <div class="col col-8">
+      <div class="col col-9">
         <StyleManager />
       </div>
     </div>
@@ -24,8 +24,15 @@ export default {
 };
 </script>
 <style>
-#app-letter{
+#app-invoice{
   height: 100vh;
+  overflow: hidden;
+  padding:10px
 }
-
+.col{
+  max-height: 100vh ;
+  overflow: hidden;
+   /* Hide vertical scrollbar */
+  overflow: hidden;
+}
 </style>

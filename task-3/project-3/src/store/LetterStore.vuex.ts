@@ -10,6 +10,7 @@ export class LetterStore extends VuexModule {
     Subject = ""
     Introduction = ""
     Conclusion=""
+    showLetterContent=true
     Para:any=[  {
         content:"",
         id:this.uuid
@@ -17,6 +18,8 @@ export class LetterStore extends VuexModule {
     id=0
     input=""
     array:any=[]
+    
+
     @mutation editFromInput(data:any) {
         this.From=data
         console.log(this.From)
@@ -43,6 +46,7 @@ export class LetterStore extends VuexModule {
         )
     }
     @mutation paraInput(arr:any){
+        this.showLetterContent=false
       this.id=arr[0]
       this.input=arr[1]
       this.Para=this.Para.map((item:any)=>{
@@ -90,11 +94,12 @@ export class LetterStore extends VuexModule {
         this.editContentInput(data)
     }
     @action async addNewPara(){
+        this.showLetterContent=false
         this.newPara()
     }
     @action async paraNewInput(arr:Array<any>){
         this.array=arr
-        
+        this.showLetterContent=false
        this.paraInput(this.array)
     }
     @action async deleteGetId(id:Number){
