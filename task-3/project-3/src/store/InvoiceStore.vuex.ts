@@ -5,7 +5,7 @@ const VuexModule = createModule({
 })
 export class InvoiceStore extends VuexModule {
     uuid: number = Math.ceil(Math.random() * 1000)
-    
+
     fromAddress = {}
     toAddress = {}
     items: any = []
@@ -13,6 +13,13 @@ export class InvoiceStore extends VuexModule {
     termsAndConditions = ""
     invoiceDates = {}
     id = 0
+    total=0
+    @getter getTotal(){
+    this.items.forEach((item:any)=>{
+      this.total+=parseInt(item.price)
+    })
+    return this.total
+   }
     @mutation editToInput(data: any) {
         this.toAddress = data
     }
@@ -29,7 +36,7 @@ export class InvoiceStore extends VuexModule {
                 name: "",
                 price: "",
                 gst: "",
-                id: this.id
+                id: this.uuid
             }
         )
     }
@@ -43,8 +50,15 @@ export class InvoiceStore extends VuexModule {
                     id: data.id
                 }
             }
-        }
-        )
+            else {
+                return item
+            }
+        })
+    }
+    @mutation ItemDelGetId(del_id: Number) {
+        this.items = this.items.filter((item: any) => {
+            return item.id !== del_id;
+        });
     }
 
     @action async dataToInput(data: any) {
@@ -64,7 +78,9 @@ export class InvoiceStore extends VuexModule {
     @action async ItemsInput(data: any) {
         this.ItemsEdit(data)
     }
-
+    @action async itemDelId(id: any) {
+        this.ItemDelGetId(id)
+    }
 
 }
 

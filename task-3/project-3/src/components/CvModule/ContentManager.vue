@@ -91,18 +91,6 @@
               required
               @keyup="personalForm"
             />
-            <!-- <label for="validationDefault01" class="form-label form-control-sm"
-              >Personal</label
-            >
-
-            <input
-              type="text"
-              class="formstyle form-control form-control-sm"
-              id="validationDefault01"
-              v-model="linkedin"
-              required
-              @keyup="personalForm"
-            /> -->
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 <template>
 <div class="container"> 
   <div class="row">
-    <div class="col-7">
+    <div class="col-8">
       <DocumentManager
         :backgroundSelected="backgroundSelected"
         :colorSelected="colorSelected"
@@ -14,7 +14,7 @@
         :textFont="textFont"
       />
     </div>
-    <div class="col-5">
+    <div class="col-4">
       <div class="container border">
         <br />
         <h5>Style Manager</h5>
@@ -121,6 +121,9 @@ export default class App extends Vue {
   
 }
 </script>
-<style>
-
+<style >
+.container{
+   overflow: auto;
+   max-height: 100%;
+}
 </style>

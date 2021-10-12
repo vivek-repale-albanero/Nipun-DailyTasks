@@ -1,13 +1,14 @@
 <template>
   <div
-    class="container-fluid container-main border"
+    class="container container-main border"
     :style="{
       height: auto,
       color: colorSelected,
       'background-color': backgroundSelected,
       'border-radius': BorderRadiusSelected + 'px',
+      height:'550px'
     }"
-    height="1000vh"
+    
   >
     <br />
     <br />
@@ -15,7 +16,7 @@
       <div class="container float-end">
         <div
           class="card float-end bg-transparent border-0"
-          style="width: 10rem"
+          style="width: 14rem"
         >
           <div class="card-body">
             <div
@@ -26,7 +27,7 @@
                 fontStyle:italicCheckboxSelected2.ToitalicCheckbox
               }"
             >
-              To 
+              To:
               <div>{{ data.To.Todatatitle }} {{ data.To.Todataname }}</div>
               <div>{{ data.To.Todatainstitute }}</div>
               <div>{{ data.To.Todatacity }}</div>
@@ -39,6 +40,8 @@
     </div>
     <br />
     <br />
+
+
 
     <div class="row">
       <div class="card bg-transparent border-0">
@@ -56,6 +59,10 @@
         </div>
       </div>
     </div>
+    <!--para -->
+        <div v-if="data.showLetterContent"  >
+        <center> <p class="font-weight-light">/* Add your text here */</p></center>
+          </div>
     <div class="row">
       <div v-for="(item, i) in data.Para" :key="i">
         <div class="card bg-transparent border-0">
@@ -74,10 +81,14 @@
       </div>
     </div>
     <br />
-    <div class="row float-end">
-      <div class="card bg-transparent border-0" style="width: 10rem">
-        <div class="card-body">
-          <div
+    <div class="row">
+      <div class="container float-end">
+        <div
+          class="card float-end bg-transparent border-0"
+          style="width: 14rem"
+        >
+          <div class="card-body">
+            <div
             :style="{
               'font-size': sizeSelected.Fromsize + 'px',
               fontFamily: styleSelected.Fromstyle,
@@ -93,6 +104,7 @@
             <div>{{ data.From.Fromdatadistrict }}</div>
             <div>{{ data.From.Fromdatapincode }}</div>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -128,8 +140,14 @@ export default class App extends Vue {
 
 <style>
 .container-main {
-  overflow: auto;
+  overflow: hidden;
   max-height: 100%;
+  
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.container{
+  padding: 5px;
 
 }
 </style>

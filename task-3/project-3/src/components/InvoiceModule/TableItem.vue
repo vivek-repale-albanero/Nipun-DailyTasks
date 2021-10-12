@@ -5,7 +5,7 @@
               >Name</label
             >
             <input
-              type="date"
+              type="text"
               class="formstyle form-control form-control-sm"
               id="validationDefault01"
               v-model="itemName"
@@ -16,7 +16,7 @@
               >Gst</label
             >
             <input
-              type="date"
+              type="text"
               class="formstyle form-control form-control-sm"
               id="validationDefault01"
               v-model="itemGst"
@@ -27,7 +27,7 @@
               >Price</label
             >
             <input
-              type="date"
+              type="text"
               class="formstyle form-control form-control-sm"
               id="validationDefault01"
               v-model="itemPrice"
@@ -57,9 +57,10 @@ export default class extends Vue {
   
     eventItems(){
     this.Items={
-     itemName:this.itemName,
-     itemPrice:this.itemPrice,
-     itemGst:this.itemGst
+     name:this.itemName,
+     price:this.itemPrice,
+     gst:this.itemGst,
+     id:this.item.id
     }
     this.data.ItemsInput(this.Items)
    } 
