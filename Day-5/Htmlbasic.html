@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <style>
+      table,
+      th,
+      td {
+        border-spacing: 30px;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      tr:nth-child(even) {
+        background-color: #d6eeee;
+      }
+      .basic {
+        color: purple;
+        border: 2px solid black;
+        background-color: rgba(255, 99, 71, 0.5);
+        opacity: 0.3;
+        text-align: center;
+      }
+      .basic-2 {
+        background-image: url("..images/chandler.jpg/");
+        background-repeat: no-repeat;
+      }
+      a:link {
+        color: red;
+      }
+
+      /* visited link */
+      a:visited {
+        color: green;
+      }
+
+      /* mouse over link */
+      a:hover {
+        color: hotpink;
+      }
+
+      /* selected link */
+      a:active {
+        color: blue;
+      }
+      ol {
+        background: #ff9999;
+        padding: 20px;
+      }
+
+      ul {
+        background: #3399ff;
+        padding: 20px;
+      }
+
+      ol li {
+        background: #ffe5e5;
+        padding: 5px;
+        margin-left: 35px;
+      }
+
+      ul li {
+        background: #cce5ff;
+        margin: 5px;
+      }
+      button{
+        color:white;
+        height:30px;
+        padding:3px;
+        background-color:blue;
+        border:1px solid black;
+        
+        border-radius:2px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <b><a href="default.asp" target="_blank">This is a link</a></b>
+    </p>
+    <h1>The em element</h1>
+    <p>You <em>have</em> to hurry up!</p>
+    <p>We <b>cannot</b> live like this.</p>
+    <p>We <strong>So Stop</strong> behaving like this.</p>
+    <p>
+      The <i>RMS Titanic</i>, a luxury steamship, sank on April 15, 1912 after
+      striking an iceberg.
+    </p>
+    <p>My favorite color is <del>blue</del> <ins>red</ins>.</p>
+    <p>Do not forget to buy <mark>milk</mark> today.</p>
+    <blockquote>
+      <q>
+        For 50 years, WWF has been protecting the future of nature. The world's
+        leading conservation organization, WWF works in 100 countries and is
+        supported by 1.2 million members in the United States and close to 5
+        million globally.</q
+      >
+    </blockquote>
+    <table style="width: 100%">
+      <tr>
+        <th style="width: 40%">First Name</th>
+        <th>Family Name</th>
+        <th colspan="2">PhoneNumber</th>
+      </tr>
+      <tr>
+        <td>Nipun</td>
+        <td>Bathini</td>
+        <td>9115487749</td>
+        <td>9115487749</td>
+      </tr>
+      <tr>
+        <td>Nipun2</td>
+        <td>Bathini</td>
+        <td>9115469850</td>
+      </tr>
+    </table>
+    <ul>
+      <li>Spider-Man</li>
+      <li>Iron Man</li>
+      <li>Black Widow</li>
+    </ul>
+
+    <ol>
+      <li>Spider-Man</li>
+      <li>Iron Man</li>
+      <li>Black Widow</li>
+    </ol>
+    <dl>
+      <dt>Spider-Man</dt>
+      <dd>With great power, comes great responsibility.</dd>
+      <dt>Iron Man</dt>
+      <dd>The Truth is… I am Iron Man.</dd>
+      <dt>Black Widow</dt>
+    </dl>
+    <!-- HTML Block and Inline Elements -->
+    <!--Block-->
+    <div>Hello world pmpatmtboprtbr,b[,tr[brt[bstbbbbbb</div>
+    <!--inline-->
+    <h3 class="basic">Hello World</h3>
+    <p id="demo">JavaScript can change the style of an HTML element.</p>
+    <div class="basic-2">hi</div>
+
+    <form action="">
+      <fieldset>
+        <legend>Personalia:</legend>
+        <label for="fname">First name:</label><br />
+        <input type="text" id="fname" name="fname" value="John" /><br />
+        <label for="lname">Last name:</label><br />
+        <input type="text" id="lname" name="lname" value="Doe" /><br /><br />
+        <input type="submit" value="Submit" />
+      </fieldset>
+    </form>
+
+    <div id="elem">
+      <div id="elem-content">Element</div>
+    </div>
+    <p id="para">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book. It has survived not only five centuries, but
+      also the leap into electronic typesetting, remaining essentially
+      unchanged. It was popularised in the 1960s with the release of Letraset
+      sheets containing Lorem Ipsum passages, and more recently with desktop
+      publishing software like Aldus PageMaker including versions of Lorem
+      Ipsum. Why do we use it? It is a long established fact that a reader will
+      be distracted by the readable content of a page when looking at its
+      layout. The point of using Lorem Ipsum is that it has a more-or-less
+      normal distribution of letters, as opposed to using 'Content here, content
+      here', making it look like readable English. Many desktop publishing
+      packages and web page editors now use Lorem Ipsum as their default model
+      text, and a search for 'lorem ipsum' will uncover many web sites still in
+      their infancy. Various versions have evolved over the years, sometimes by
+      accident, sometimes on purpose (injected humour and the like). </p>
+      <button id="btn"> Hide content </button>
+      <script>
+        para.addEventListener("mouseover",()=>{
+        console.log("mouse in")
+      })
+        para.addEventListener("mousedown",()=>{
+        console.log("mouse out")
+      })
+
+      btn.addEventListener("click",()=>{
+      
+      if(para.style.display!="none")
+      para.style.display="none"
+      else
+      para.style.display="block"
+      })
+        let div = document.createElement("div");
+        div.className = "alert";
+        div.innerHTML =
+          "<strong>Hi there!</strong> You've read an important message.";
+        document.getElementById("demo").style.fontSize = "25px";
+        document.getElementById("demo").style.color = "red";
+
+        //let elem = document.getElementById("elem");
+        elem.style.color = "green";
+      </script>
+    </p>
+  </body>
+</html>
